@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is a solution to the Newsletter sign-up form with success message challenge on Frontend Mentor."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body
+    class="bg-white min-h-screen md:bg-charcoal-grey md:grid md:place-content-center"
+  >
+    <main
+      class="font-roboto text-charcoal-grey max-w-[928px] md:bg-white md:rounded-[38px] md:p-6"
+    >
+      <!-- Sign-up form start -->
+      <section class="md:flex md:flex-row-reverse md:gap-x-6">
+        <div>
+          <picture class="md:w-[400px] md:block">
+            <source
+              media="(min-width: 768px)"
+              srcset="./assets/images/illustration-sign-up-desktop.svg"
+            />
+            <img
+              class="w-full min-h-[284px]"
+              src="./assets/images/illustration-sign-up-mobile.svg"
+              alt=""
+            />
+          </picture>
+        </div>
+        <div class="p-6 md:p-10">
+          <h1 class="text-[40px] md:text-[56px] font-bold my-4">
+            Stay updated!
+          </h1>
+          <p class="mb-6">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <ul class="mb-10 grid gap-y-2">
+            <li class="bg-icon-check bg-no-repeat pl-9">
+              Product discovery and building what matters
+            </li>
+            <li class="bg-icon-check bg-no-repeat pl-9">
+              Measuring to ensure updates are a success
+            </li>
+            <li class="bg-icon-check bg-no-repeat pl-9">And much more!</li>
+          </ul>
+          <form action="./success.html" method="get" id="form">
+            <div>
+              <label class="block mb-2 text-xs font-bold" for="email"
+                >Email address
+                <span id="error-text" class="text-tomato float-right hidden"
+                  >Valid email required</span
+                >
+              </label>
+              <input
+                class="border border-solid border-grey block w-full rounded-lg py-4 px-6"
+                type="email"
+                placeholder="email@company.com"
+                name="email"
+                id="email"
+                required
+              />
+            </div>
+            <button
+              class="bg-dark-slate-grey text-white font-bold block w-full rounded-lg py-4 my-6 hover-bg-gradient"
+            >
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+        </div>
+      </section>
+      <!-- Sign-up form end -->
+    </main>
+
+    <script>
+      ((d) => {
+        const qS = (s) => d.querySelector(s);
+        const n = qS('#form');
+        const o = qS('#email');
+        const s = (t) =>
+          /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(t);
+
+        o.addEventListener('input', function () {
+          const t = o.value;
+          if (!t || s(t)) {
+            n.classList.remove('has-error');
+          } else {
+            n.classList.add('has-error');
+          }
+        });
+        n.addEventListener('submit', function (t) {
+          if (!s(o.value)) {
+            t.preventDefault();
+          }
+        });
+      })(document);
+    </script>
+  </body>
+</html>

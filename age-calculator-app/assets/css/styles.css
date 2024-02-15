@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: hsl(0, 0%, 94%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+input {
+  font: inherit;
+}
+
+/**
+ * Hides stepper arrows on input[type=number] 
+ * @source https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp 
+ */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.main-container {
+  flex: 1;
+  background-color: hsl(0, 0%, 100%);
+  padding: 3rem 1.5rem;
+  border-radius: 1.5rem;
+  border-bottom-right-radius: 6.25rem;
+  max-width: 26.25rem;
+}
+
+.fields {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.field {
+  flex: 1;
+  display: grid;
+  row-gap: 0.5rem;
+}
+.field__label {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.25rem;
+  color: hsl(0, 1%, 44%);
+}
+.field__label--error {
+  color: hsl(0, 100%, 67%);
+}
+.field__input {
+  font-size: 1.25rem;
+  width: 100%;
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+}
+.field__input::placeholder {
+  color: #a4a2a2;
+}
+.field__input:focus {
+  border-color: hsl(0, 100%, 67%);
+  outline-color: hsl(259, 100%, 65%);
+}
+.field__input--error {
+  border-color: hsl(0, 100%, 67%);
+  outline-color: hsl(0, 100%, 67%);
+}
+.field__input-error {
+  color: hsl(0, 100%, 67%);
+  font-size: 0.75rem;
+  font-style: italic;
+  visibility: hidden;
+  height: 1.5rem;
+}
+.field__input-error.active {
+  visibility: visible;
+}
+
+.submit-button {
+  background-color: hsl(259, 100%, 65%);
+  width: 4rem;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 9999px;
+  position: relative;
+  cursor: pointer;
+  will-change: scale;
+  transition: transform 0.1s;
+}
+.submit-button-icon {
+  width: 50%;
+}
+.submit-button-container {
+  position: relative;
+  text-align: center;
+  margin-block: 2rem;
+}
+.submit-button-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  border-top: 2px solid hsl(0, 0%, 86%);
+}
+.submit-button:hover {
+  background-color: hsl(0, 0%, 8%);
+  transform: scale(1.05);
+}
+.submit-button:active {
+  transform: scale(1);
+}
+
+.result {
+  font-size: 3.375rem;
+  font-style: italic;
+  font-weight: 800;
+}
+.result__row {
+  line-height: 1;
+  display: flex;
+}
+.result__count {
+  color: hsl(259, 100%, 65%);
+  min-width: 2ch;
+  text-align: right;
+}
+.result__label {
+  margin-left: 0.5rem;
+  color: hsl(0, 0%, 8%);
+}
+
+@media (min-width: 712px) {
+  .main-container {
+    padding: 3.5rem;
+    border-bottom-right-radius: 12.5rem;
+    max-width: 52.5rem;
+  }
+  .fields {
+    column-gap: 2rem;
+  }
+  .field {
+    flex-grow: 0;
+  }
+  .field__input {
+    font-size: 2rem;
+    width: max(10rem, 100%);
+    padding-inline: 1.75rem;
+  }
+  .field__input-error {
+    font-size: 0.875rem;
+  }
+  .submit-button {
+    width: 6rem;
+  }
+  .submit-button-container {
+    text-align: right;
+    margin-block: 0;
+  }
+  .result {
+    font-size: 6.375rem;
+  }
+  .result__label {
+    margin-left: 1rem;
+  }
+}

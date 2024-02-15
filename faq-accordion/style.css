@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-image: url('./assets/images/background-pattern-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--light-pink);
+  font-family: 'Work Sans', sans-serif;
+}
+
+main {
+  background-color: var(--white);
+  max-width: 600px;
+  border-radius: 0.5em;
+  margin-inline: 1.5em;
+  margin-block: 7em;
+  padding: 1.5em;
+  box-shadow: 0 0 3.75em -1.875em hsl(292, 16%, 49%);
+}
+
+h1,
+summary {
+  color: var(--dark-purple);
+}
+
+p {
+  color: var(--grayish-purple);
+  margin-block: 0 1em;
+  line-height: 1.5;
+  font-size: 0.875em;
+}
+
+h1 {
+  background: url('./assets/images/icon-star.svg') no-repeat left;
+  background-size: 0.75em;
+  font-size: 2em;
+  padding-left: 1.5em;
+  margin-block: 0 0.5em;
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+  background: url('./assets/images/icon-plus.svg') no-repeat top 1.25em right;
+  background-size: 1.75em;
+  padding-block: 1.5em;
+  padding-right: 3em;
+  font-weight: 600;
+}
+
+details[open] > summary {
+  background-image: url('./assets/images/icon-minus.svg');
+}
+
+details:not(:last-child) {
+  border-bottom: 1px solid var(--light-pink);
+}
+
+details:last-child > p {
+  margin-bottom: 0;
+}
+
+/* Media Queries */
+
+@media (min-width: 600px) {
+  body {
+    background-image: url('./assets/images/background-pattern-desktop.svg');
+  }
+
+  main {
+    padding: 2.5em;
+    margin-inline: auto;
+    margin-block: 10vw;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  details > summary {
+    font-size: 1.125em;
+  }
+}

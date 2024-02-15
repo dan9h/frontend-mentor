@@ -1,0 +1,16 @@
+{
+  "name": "newsletter-sign-up",
+  "version": "1.0.0",
+  "description": "This is a solution to the Newsletter sign-up form with success message challenge on Frontend Mentor.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run build -- --watch",
+    "build": "npx tailwindcss -i ./input.css -o ./styles.css"
+  },
+  "author": "Dan Herrera (https://github.com/dan9h)",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

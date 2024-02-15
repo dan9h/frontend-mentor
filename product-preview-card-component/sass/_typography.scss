@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@mixin montserrat($weight) {
+  font: {
+    family: 'Montserrat', sans-serif;
+    optical-sizing: auto;
+    weight: $weight;
+    style: normal;
+  }
+}
+
+@mixin fraunces($weight) {
+  font: {
+    family: 'Fraunces', serif;
+    optical-sizing: auto;
+    weight: $weight;
+    style: normal;
+    variation-settings: 'SOFT' 0, 'WONK' 0;
+  }
+}
+
+$fs-para: 87.5%; // 14px

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .social-link {
+    @apply bg-grey rounded-lg overflow-hidden;
+  }
+
+  .social-link > a {
+    @apply block py-3 font-bold hover:bg-green hover:text-dark-grey;
+  }
+}

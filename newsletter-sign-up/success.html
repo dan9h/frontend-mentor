@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is a solution to the Newsletter sign-up form with success message challenge on Frontend Mentor."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body
+    class="font-roboto text-charcoal-grey min-h-screen md:bg-charcoal-grey md:grid md:place-content-center"
+  >
+    <main
+      class="bg-white p-6 h-screen md:h-auto md:p-16 md:max-w-[504px] md:rounded-[38px]"
+    >
+      <!-- Success message start -->
+      <section class="h-full flex flex-col">
+        <img
+          class="w-16 mt-[148px] md:mt-0"
+          src="./assets/images/icon-success.svg"
+          alt=""
+        />
+        <h1
+          class="text-[40px] font-bold mt-10 mb-6 leading-none md:text-[56px]"
+        >
+          Thanks for subscribing!
+        </h1>
+        <p class="mb-10">
+          A confirmation email has been sent to
+          <span class="font-bold" id="email">ash@loremcompany.com</span>. Please
+          open it and click the button inside to confirm your subscription.
+        </p>
+        <a
+          class="bg-dark-slate-grey text-white text-center font-bold block w-full rounded-lg py-4 mt-auto mb-6 hover-bg-gradient"
+          href="./index.html"
+        >
+          Dismiss message
+        </a>
+      </section>
+      <!-- Success message end -->
+    </main>
+
+    <script>
+      {
+        const isValidEmail = (emailString) =>
+          /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailString);
+        const url = new URL(window.location);
+        const email = url.searchParams.get('email');
+
+        console.log(email);
+
+        if (isValidEmail(email)) {
+          document.getElementById('email').textContent = email;
+        } else {
+          // if email is empty, null, or invalid,
+          // redirect to the index page
+          window.location.href = './index.html';
+        }
+      }
+    </script>
+  </body>
+</html>

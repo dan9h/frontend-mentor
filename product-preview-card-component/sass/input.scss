@@ -1,0 +1,154 @@
+@import 'colors';
+@import 'typography';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  background-color: $cream;
+  color: $grayish-blue;
+
+  // centering
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.card {
+  background-color: $white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  max-width: 345px;
+  margin-inline: auto;
+
+  &__image {
+    line-height: 0;
+  }
+
+  &__text {
+    @include montserrat(500); // font
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+}
+
+.product {
+  &__image {
+    display: inline-block;
+
+    > img {
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+
+  &__type {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.3rem;
+  }
+
+  &__name,
+  &__price-new {
+    @include fraunces(700); // font
+  }
+
+  &__name {
+    font-size: 2rem;
+    line-height: 1;
+    color: $dark-blue;
+    margin-block: 0.75rem 1rem;
+  }
+
+  &__description {
+    font-size: $fs-para;
+    line-height: 1.65;
+    margin-top: 0;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    column-gap: 1.25rem;
+    margin-block: 0.35rem 1rem;
+
+    &-new {
+      font-size: 2rem;
+      color: $dark-cyan;
+    }
+
+    &-old {
+      text-decoration: line-through;
+      font-size: 0.8125rem;
+    }
+  }
+}
+
+.atc-btn {
+  display: flex;
+  justify-content: center;
+  column-gap: 0.75rem;
+  width: 100%;
+  cursor: pointer;
+  background-color: $dark-cyan;
+  color: $white;
+  border: {
+    width: 0;
+    radius: 0.5rem;
+  }
+  padding-block: 0.9rem;
+  margin-top: auto;
+  font: {
+    family: inherit;
+    weight: 600;
+    size: 0.875rem;
+  }
+
+  &:hover {
+    background-color: darken($dark-cyan, 20%);
+  }
+
+  &:active {
+    background-color: darken($dark-cyan, 5%);
+  }
+}
+
+@media (min-width: 632px) {
+  .card {
+    display: flex;
+    max-width: 600px;
+
+    &__image,
+    &__text {
+      flex: 1 0 50%;
+    }
+
+    &__text {
+      padding: 2rem;
+    }
+  }
+
+  .product {
+    &__name {
+      margin-top: 1.25rem;
+    }
+
+    &__description {
+      margin-top: 0.5rem;
+    }
+
+    &__price {
+      margin-top: 0.75rem;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@layer components {
+  .has-error #error-text {
+    @apply inline-block;
+  }
+
+  .has-error #email {
+    @apply border-tomato outline-tomato bg-tomato bg-opacity-10;
+  }
+
+  .hover-bg-gradient {
+    @apply hover:bg-gradient-to-r from-[#FF5474] to-tomato;
+  }
+}
