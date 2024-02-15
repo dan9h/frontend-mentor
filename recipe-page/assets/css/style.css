@@ -1,0 +1,174 @@
+:root {
+  /* Primary Colors */
+  --nutmeg: hsl(14, 45%, 36%);
+  --dark-raspberry: hsl(332, 51%, 32%);
+
+  /* Secondary Colors */
+  --White: hsl(0, 0%, 100%);
+  --rose-white: hsl(330, 100%, 98%);
+  --eggshell: hsl(30, 54%, 90%);
+  --lightgrey: hsl(30, 18%, 87%);
+  --wenge-brown: hsl(30, 10%, 34%);
+  --dark-charcoal: hsl(24, 5%, 18%);
+
+  /* Typography */
+  --young-serif: 'Young Serif', serif;
+  --outfit: 'Outfit', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--outfit);
+  color: var(--wenge-brown);
+  background-color: var(--eggshell);
+}
+
+main {
+  max-width: 736px;
+  background-color: var(--White);
+  margin-inline: auto;
+}
+
+h1,
+h2 {
+  font-family: var(--young-serif);
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1.75em;
+  color: var(--nutmeg);
+}
+
+ul,
+ol {
+  padding-inline-start: 1.5em;
+}
+
+li {
+  padding-inline-start: 1em;
+  margin-block-end: 1em;
+}
+
+li::marker {
+  font-weight: 700;
+  color: hsl(14, 45%, 36%);
+}
+
+p,
+li {
+  line-height: 1.4;
+}
+
+.divider {
+  margin-block: 2em;
+  border: none;
+  border-top: 1px solid var(--lightgrey);
+}
+
+.label {
+  font-weight: 700;
+}
+
+.text-wrapper {
+  margin-inline: 2em;
+  padding-bottom: 2em;
+}
+
+#recipe-image {
+  width: 100%;
+  min-height: 171px;
+  object-fit: cover;
+  background-color: var(--lightgrey);
+}
+
+#recipe-name {
+  font-size: 2.24em;
+  line-height: 1.05;
+  color: var(--dark-charcoal);
+  margin-top: 1em;
+}
+
+/* Preparation Section */
+
+#preparation-section {
+  background-color: var(--rose-white);
+  padding: 1.5em;
+  margin-block: 2em;
+  border-radius: 0.75em;
+}
+
+#preparation-section h2 {
+  margin-top: 0;
+  font-family: var(--outfit);
+  font-size: 1.25em;
+  font-weight: 600;
+  color: var(--dark-raspberry);
+}
+
+#preparation-section ul,
+#preparation-section li:last-child {
+  margin-bottom: 0;
+}
+
+#preparation-section li {
+  margin-bottom: 0.5em;
+}
+
+/* Nutrition Section */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding-block: 1em;
+  width: 50%;
+}
+
+th {
+  text-align: left;
+  font-weight: 400;
+  padding-left: 2em;
+}
+
+td {
+  font-weight: 700;
+  color: hsl(14, 45%, 36%);
+}
+
+tr:not(:last-child) {
+  border-bottom: 1px solid hsl(30, 18%, 87%);
+}
+
+/* Media Queries */
+
+@media (min-width: 736px) {
+  main {
+    margin-block: 7.625em;
+    border-radius: 2em;
+    padding: 2.5em;
+  }
+
+  #recipe-image {
+    border-radius: 0.75em;
+    height: 300px;
+  }
+
+  .text-wrapper {
+    margin-inline: 0;
+    padding-bottom: 0;
+  }
+}
